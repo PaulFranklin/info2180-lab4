@@ -1,12 +1,26 @@
 window.onload = function() 
 {
-	var boundary = document.querySelector('#boundary1');
-	boundary.onmouseover = function() {
-		color(boundary);
-	};
+var check = 0;
+var start = document.getElementById('start');
+var boundaries = document.querySelectorAll('.boundary');
 
-	function color(elementToColor) 
-	{
-		elementToColor.className = "boundary youlose";
-	}
-};
+start.onmouseover = function(){
+	check = 1;
+}
+
+
+for (var i = 0; i < boundaries.length; i++) {
+        boundaries[i].onmouseover = function()
+		{
+			console.log("hit");
+		if (check === 1){
+		
+			for (var j = 0; j < boundaries.length; j++) {
+		  
+			boundaries[j].style.backgroundColor = "#ff8888";
+			}
+			}
+		}
+		}
+}
+
