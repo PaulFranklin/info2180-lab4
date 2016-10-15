@@ -1,7 +1,9 @@
 window.onload = function() 
 {
 var check = 0;
+
 var endover =0;
+var statuss = document.getElementById('status');
 var start = document.getElementById('start');
 var boundaries = document.querySelectorAll('.boundary');
 var ending = document.getElementById('end');
@@ -32,7 +34,8 @@ ending.onmouseover = function(){
 	
  if (endover === 0 && check===1 )
 {
-	 alert("You Win Bruh");	
+	
+	  statuss.innerHTML = "You Won Bruh"	
 }
 
 
@@ -49,7 +52,11 @@ ending.onmouseover = function(){
                {
                    boundaries[i].style.backgroundColor = "#eeeeee"; 
            				   
-               }  
+               } 
+			endover = 0;
+			statuss.innerHTML = "Move your mouse over the \"S\" to begin";			   
+			   
+			   
            
            
            
